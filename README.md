@@ -23,12 +23,13 @@ npm run start:prod
 ```
 
 ### Frontend
+```bash
+https://petping-c03ea.web.app/
+```
+
 #### Development 
 ```bash
 npm i
 # for development environment
 npm run start
 ```
-
-### Note
-- no hidden sensitive file
