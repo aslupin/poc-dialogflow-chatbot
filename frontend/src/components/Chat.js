@@ -121,6 +121,70 @@ const ChatComp = () => {
             setHistory([...history, userNewMsg, botNewMsg])
             setQuestion('')
 
+/**
+* 
+
+    [
+    ]
+
+    [
+        {
+            type: "user",
+            text: "hello"
+        }
+        {
+            type: "bot",
+            text: "what"
+        }
+    ]
+
+    [
+        {
+            type: "user",
+            text: "hello"
+        }
+        {
+            type: "bot",
+            text: "what"
+        }
+        {
+            type: "user",
+            text: "have question"
+        }
+        {
+            type: "bot",
+            text: "what question"
+        }
+    ]
+
+     [
+        {
+            type: "user",
+            text: "hello"
+        }
+        {
+            type: "bot",
+            text: "what"
+        }
+        {
+            type: "user",
+            text: "have question"
+        }
+        {
+            type: "bot",
+            text: "what question"
+        }
+        {
+            type: "user",
+            text: "wat ur name"
+        }
+        {
+            type: "bot",
+            text: "bott"
+        }
+    ]
+*/
+
             var element = document.getElementById("adapter");
             element.scrollTop = element.scrollHeight;
             setLoading(false)
@@ -133,6 +197,8 @@ const ChatComp = () => {
 
     const showChat = () => {
         setIsShowChat(!isShowChat)
+        // false => !false = true
+        // true => !true = false
         console.log(isShowChat)
     }
 

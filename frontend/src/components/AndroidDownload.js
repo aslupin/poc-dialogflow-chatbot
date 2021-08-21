@@ -88,10 +88,10 @@ const AndroidDownload = () => {
             <PhoneImage src={img_phone} loading="lazy" />
                 
             <Wrapper>
-                <DownloadTopic>
-                    ดาวร์โหลด Application
-                </DownloadTopic>
-                    <ContentContainer href="https://drive.google.com/file/d/1C2YuXEp-2y-pneQcWEZrnA_kb9rX23Kp/view?usp=sharing" target="_blank">
+                    <DownloadTopic>
+                        ดาวร์โหลด Application
+                    </DownloadTopic>
+                    <ContentContainer href="https://drive.google.com/file/d/1uJyU-tj4R-VIQ629irIRnbZhA9tCHkNw/view?usp=sharing" target="_blank">
                     <DownloadIcon src={img_android} loading="lazy" />
                     <TextDownload> 
                         Download for Android

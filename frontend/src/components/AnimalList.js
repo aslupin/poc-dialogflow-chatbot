@@ -129,7 +129,6 @@ const AnimalList = ({ type, bg }) => {
         <>
             <TypeText>{type}ที่กำลังต้องการผู้อุปการะ</TypeText>
             <Adapter bg={bg}>
-                
                 {
                     animals
                     .filter((animal) => animal.Type && animal.Type === type)
