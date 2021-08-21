@@ -121,6 +121,7 @@ const AnimalList = ({ type, bg }) => {
         setAnimal(animalBulk)
     }
 
+    // when component rendered (first time)
     useEffect(() => {
          getAnimal()
     }, [])
