@@ -1,0 +1,26 @@
+{
+    "name": "backend",
+    "version": "1.0.0",
+    "description": "",
+    "main": "app.js",
+    "scripts": {
+        "start:dev": "nodemon app.js",
+        "start:prod": "NODE_ENV=production node app.js",
+        "test": "jest --watchAll --coverage "
+    },
+    "author": "someone",
+    "license": "ISC",
+    "dependencies": {
+        "@google-cloud/dialogflow": "^4.3.1",
+        "body-parser": "^1.19.0",
+        "cors": "^2.8.5",
+        "dialogflow": "^1.2.0",
+        "express": "^4.17.1",
+        "morgan": "^1.10.0",
+        "uuid": "^8.3.2"
+    },
+    "devDependencies": {
+        "jest": "^26.6.3",
+        "nodemon": "^2.0.7"
+    }
+}
