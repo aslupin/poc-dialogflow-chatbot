@@ -1,14 +1,19 @@
 const dialogflow = require("@google-cloud/dialogflow");
 const uuid = require("uuid");
 const dialogflowConfig = require("./config");
-const Path = require("path")
 
 const projectId = dialogflowConfig.project_id;
 const sessionId = uuid.v4();
 const languageCode = "en-US";
-const sessionClient = new dialogflow.SessionsClient({
-    keyFilename: Path.join(__dirname, "./key.json"), 
-})
+
+const configuration = {
+    credentials: {
+        private_key: dialogflowConfig.private_key,
+        client_email: dialogflowConfig.client_email
+    }
+};
+
+const sessionClient = new dialogflow.SessionsClient(configuration)
 const sessionPath = sessionClient.projectAgentSessionPath(projectId, sessionId);
 
 async function talkToChatbot(message) {
