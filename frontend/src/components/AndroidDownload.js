@@ -37,6 +37,11 @@ const ContentContainer = styled.a`
     box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.5), 5px 5px 10px rgba(170, 170, 204, 0.25), 10px 10px 20px rgba(170, 170, 204, 0.5), -10px -10px 20px #FFFFFF;
     border-radius: 16px;
     cursor: pointer;
+    
+    @media only screen and (max-width: 1000px) {
+       width: 300px;
+       font-size: 14px;
+    }
 `
 
 const PhoneImage = styled.img`
@@ -58,6 +63,10 @@ const TextDownload = styled.p`
     font-size:  20px;
     font-weight: bold;
     text-transform:  uppercase;
+
+    @media only screen and (max-width: 1000px) {
+       font-size: 14px;
+    }
 `
 
 const DownloadTopic = styled.div`
@@ -76,8 +85,8 @@ const DownloadTopic = styled.div`
     box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.5), 5px 5px 10px rgba(170, 170, 204, 0.25), 10px 10px 20px rgba(170, 170, 204, 0.5), -10px -10px 20px #FFFFFF;
     border-radius: 16px;
 
-     @media only screen and (max-width: 1000px) {
-       font-size:  18px;
+    @media only screen and (max-width: 1000px) {
+       font-size:  14px;
     }
 `
 
@@ -88,10 +97,10 @@ const AndroidDownload = () => {
             <PhoneImage src={img_phone} loading="lazy" />
                 
             <Wrapper>
-                    <DownloadTopic>
-                        ดาวร์โหลด Application
-                    </DownloadTopic>
-                    <ContentContainer href="https://drive.google.com/file/d/1uJyU-tj4R-VIQ629irIRnbZhA9tCHkNw/view?usp=sharing" target="_blank">
+                <DownloadTopic>
+                    ดาวน์โหลด Application
+                </DownloadTopic>
+                <ContentContainer href="https://drive.google.com/file/d/1uJyU-tj4R-VIQ629irIRnbZhA9tCHkNw/view?usp=sharing" target="_blank">
                     <DownloadIcon src={img_android} loading="lazy" />
                     <TextDownload> 
                         Download for Android

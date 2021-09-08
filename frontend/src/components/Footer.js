@@ -29,6 +29,10 @@ const TypeText = styled.div`
          font-size:  18px;
          margin: auto 20px;
     }
+    
+    @media only screen and (max-width: 1000px) {
+        min-width: 300px;
+    }
 
     @media only screen and (max-width: 600px) {
        font-size: 16px;

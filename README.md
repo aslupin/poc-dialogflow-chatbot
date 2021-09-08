@@ -4,7 +4,7 @@ This repository use for PoC Dialogflow + NodeJS + React by create website for pe
 ### Expected for PoC
 - Try to use Dialogflow
 - Project example for [@mos](https://github.com/6088144)
-- Teaching [@mos](https://github.com/6088144) learning create website with React 
+- Teaching [@mos](https://github.com/6088144) learning create website with React
 
 ### Backend
 

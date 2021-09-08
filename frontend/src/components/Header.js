@@ -1,19 +1,20 @@
 import React from 'react'
 import styled from '@emotion/styled'
 
-import img_header from '../assets/img/header2.jpg'
+// import img_header from '../assets/img/header2.jpg'
+import HeaderImage from './SlideShow'
 
-const HeaderContaienr = styled.div`
-	position: relative;
-	width: 100%;
-	height: 720px;
-	background-image: url(${img_header});
-    background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	backdrop-filter: blur(1900px);
-	overflow: hidden;
-`
+// const HeaderContaienr = styled.div`
+// 	position: relative;
+// 	width: 100%;
+// 	height: 720px;
+// 	background-image: url(${img_header});
+//     background-position: center;
+// 	background-repeat: no-repeat;
+// 	background-size: cover;
+// 	backdrop-filter: blur(1900px);
+// 	overflow: hidden;
+// `
 
 const BlurLayer = styled.div`
 	width:  100%;
@@ -24,6 +25,7 @@ const BlurLayer = styled.div`
 `
 
 const ContainerContent = styled.div`
+    position: absolute;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -43,8 +45,8 @@ const HeaderText = styled.h1`
 	font-weight: 700;
 	font-size: 48px;
 	margin: 0;
-    background: #F5F5FA;
     text-transform: uppercase;
+    background: #F5F5FA;
 
     @media only screen and (max-width: 800px) {
         font-size: 38px;
@@ -56,19 +58,19 @@ const PRText = styled.p`
 	font-family: 'Mali';
 	font-size:  20px;
 	color:  black;
-    background: #F5F5FA;
 	font-weight: 700;
+    background: #F5F5FA;
 `
 
-const  HeaderComponent = () => {
+const HeaderComponent = () => {
     return (
-        <HeaderContaienr>
-            <BlurLayer />
-            <ContainerContent>
-                <HeaderText>Petping.com </HeaderText>
-                <PRText>เว็บไซต์รับอุปการสัตว์​</PRText>
-            </ContainerContent>
-        </HeaderContaienr>
+        <HeaderImage>
+             <BlurLayer />
+             <ContainerContent>
+                 <HeaderText>Petping.com </HeaderText>
+                 <PRText>เว็บไซต์รับอุปการะสัตว์​</PRText>
+             </ContainerContent>
+        </HeaderImage>
     )
 }
 

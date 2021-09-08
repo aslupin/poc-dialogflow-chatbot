@@ -10,20 +10,20 @@ const Container = styled.div`
     height: 700px;
     align-items: center;
     justify-content: center;
-    margin: 0;
-
+    margin: 100px 0;
+    padding: 50px;
+    
     @media only screen and (max-width: 1000px) {
         flex-direction: column;
         margin: 300px auto 500px;
     }
-
 `
 
 const ImageCondition = styled.img`
-     height: 75%;
+     width: 60%;
      margin: 0 20px;
-     max-width: 900px;
-     /* width: 90%; */
+     max-width: 500px;
+     min-width: 300px;
 `
 
 const ContentCondition = () => {

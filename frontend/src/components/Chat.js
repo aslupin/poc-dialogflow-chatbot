@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import redaxios from 'redaxios'
 import styled  from "@emotion/styled"
 import { keyframes } from '@emotion/react'
@@ -121,70 +121,6 @@ const ChatComp = () => {
             setHistory([...history, userNewMsg, botNewMsg])
             setQuestion('')
 
-/**
-* 
-
-    [
-    ]
-
-    [
-        {
-            type: "user",
-            text: "hello"
-        }
-        {
-            type: "bot",
-            text: "what"
-        }
-    ]
-
-    [
-        {
-            type: "user",
-            text: "hello"
-        }
-        {
-            type: "bot",
-            text: "what"
-        }
-        {
-            type: "user",
-            text: "have question"
-        }
-        {
-            type: "bot",
-            text: "what question"
-        }
-    ]
-
-     [
-        {
-            type: "user",
-            text: "hello"
-        }
-        {
-            type: "bot",
-            text: "what"
-        }
-        {
-            type: "user",
-            text: "have question"
-        }
-        {
-            type: "bot",
-            text: "what question"
-        }
-        {
-            type: "user",
-            text: "wat ur name"
-        }
-        {
-            type: "bot",
-            text: "bott"
-        }
-    ]
-*/
-
             var element = document.getElementById("adapter");
             element.scrollTop = element.scrollHeight;
             setLoading(false)
@@ -202,9 +138,33 @@ const ChatComp = () => {
         console.log(isShowChat)
     }
 
+    useEffect(() => {
+
+        const FirstMessage = [
+            {
+                type: "bot",
+                text: "สวัสดีค่ะ มีอะไรให้บอทช่วยเหลือมั้ยคะ?"
+            },
+            {
+                type: "admin",
+                text: "- ขั้นตอนการรับเลี้ยง"
+            },
+            {
+                type: "admin",
+                text: "- การจัดส่ง"
+            },
+            {
+                type: "admin",
+                text: "- ค่าใช้จ่าย"
+            },
+        ]
+
+        setHistory([...history, ...FirstMessage])
+    }, [])
+
     return (
         <Container isShowChat={isShowChat}>
-            <Header onClick={showChat}> แชทบอท - ถาม/ตอบทุกปัญหา</Header>
+            <Header onClick={showChat}>แชทบอท - ถาม/ตอบทุกปัญหา</Header>
             {
                 isShowChat && (
                     <>
@@ -230,8 +190,8 @@ const ChatComp = () => {
 
 const MsgItem = styled.div`
     position: relative;
-    background-color: ${props => props.type === 'bot' ? '#fff' : 'rgba(199, 245, 174, 1)'};
-    float: ${props => props.type === 'bot' ? 'left' : 'right'};
+    background-color: ${props => props.type !== 'user' ? '#fff' : 'rgba(199, 245, 174, 1)'};
+    float: ${props => props.type !== 'user' ? 'left' : 'right'};
     min-height:  44px;
     max-width: 90%;
     font-size:  18px;
@@ -240,6 +200,7 @@ const MsgItem = styled.div`
     margin:  6px 4px;
     padding:  10px 12px;
     overflow-wrap: break-word;
+    background-color: ${props => props.type === 'admin' && '#f2edce'};
 
     span {
         margin: 0;
@@ -256,7 +217,11 @@ const Message = ({ text, type }) => {
      return (
          <ItemContainer>
             <MsgItem type={type}> 
-                <span>{type}</span>: {text}
+                {
+                    type === "admin" ? 
+                        (<>{text}</>):
+                         (<><span>{type === 'bot' ? 'PETPING': type}</span>: {text}</>)
+                }
             </MsgItem>
          </ItemContainer>
      )

@@ -15,19 +15,20 @@ const CardContainer = styled.div`
        margin: 10px auto;
     }
 `
+
 const Adapter = styled.div`
     width:  90%;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-auto-columns: 1fr;
     gap: 10px;
-    height:  760px;
+    height:  ${props => props.noWidth || '760px'};
     overflow: scroll;
     overflow-x: hidden;
+    overflow-y: ${props => props.noWidth ? "hidden" : 'auto'};
     position: relative;
     scroll-behavior: smooth;
     margin: 0 auto;
-    
 
     @media only screen and (max-width: 1800px) {
        grid-template-columns: repeat(4, 1fr);
@@ -102,12 +103,16 @@ const TypeText = styled.div`
          margin: auto 20px;
     }
 
+    @media only screen and (max-width: 1000px) {
+        min-width: 300px;
+    }
+
     @media only screen and (max-width: 600px) {
-       font-size: 16px;
+       font-size: 12px;
     }
 `
 
-const AnimalList = ({ type, bg }) => {
+const AnimalList = ({ type, bg, noWidth }) => {
     const [animals, setAnimal] = useState([])
 
     const getAnimal = async () => {
@@ -129,7 +134,7 @@ const AnimalList = ({ type, bg }) => {
     return (
         <>
             <TypeText>{type}ที่กำลังต้องการผู้อุปการะ</TypeText>
-            <Adapter bg={bg}>
+            <Adapter bg={bg} noWidth={noWidth}>
                 {
                     animals
                     .filter((animal) => animal.Type && animal.Type === type)
