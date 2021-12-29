@@ -143,19 +143,23 @@ const ChatComp = () => {
         const FirstMessage = [
             {
                 type: "bot",
-                text: "สวัสดีค่ะ มีอะไรให้บอทช่วยเหลือมั้ยคะ?"
+                text: "สวัสดีค่ะ มีข้อสงสัยอะไรเกี่ยวกับการรับเลี้ยงไหมคะ"
             },
             {
                 type: "admin",
-                text: "- ขั้นตอนการรับเลี้ยง"
-            },
-            {
-                type: "admin",
-                text: "- การจัดส่ง"
-            },
-            {
-                type: "admin",
-                text: "- ค่าใช้จ่าย"
+                text: `- ขั้นตอนการขอรับเลี้ยง
+                      \n- การทำหมัน
+                      \n- วัคซีน
+                      \n- ค่าใช้จ่ายในการรับเลี้ยงมีมั้ย
+                      \n- เงื่อนไขในการรับเลี้ยง
+                      \n- การบริจาค
+                      \n- ส่งคืนสัตว์เลี้ยง
+                      \n- แพทย์พี่เลี้ยง
+                      \n- การปรับตัว+นิสัย
+                      \n- ไปดูสัตว์ด้วยตัวเอง
+                      \n- ระยะเวลาการตรวจสอบ
+                      \n- สถานที่เลี้ยงของผู้อุปการะ
+                      \n- เกี่ยวกับศูนย์พักพิง`
             },
         ]
 
@@ -194,13 +198,15 @@ const MsgItem = styled.div`
     float: ${props => props.type !== 'user' ? 'left' : 'right'};
     min-height:  44px;
     max-width: 90%;
-    font-size:  18px;
+    font-size:  14px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 20px;
     margin:  6px 4px;
     padding:  10px 12px;
     overflow-wrap: break-word;
     background-color: ${props => props.type === 'admin' && '#f2edce'};
+    white-space: pre-wrap;
+    line-height: 15px;
 
     span {
         margin: 0;
@@ -220,7 +226,7 @@ const Message = ({ text, type }) => {
                 {
                     type === "admin" ? 
                         (<>{text}</>):
-                         (<><span>{type === 'bot' ? 'PETPING': type}</span>: {text}</>)
+                         (<><span>{type === 'bot' ? 'PETPING ': type}</span>: {text}</>)
                 }
             </MsgItem>
          </ItemContainer>
